@@ -1,0 +1,23 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka
+  datasource:
+    url: jdbc:mysql://localhost:3306/testDemo?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

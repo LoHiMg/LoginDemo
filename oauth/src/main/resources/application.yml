@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oauth-service
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: xxxxxx
+            clientSecret: xxxxxx
+  datasource:
+    url: jdbc:mysql://localhost:3306/testDemo?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+
+  ldap:
+    urls: ldap://192.168.8.141:389
+    base: ou=users,dc=example,dc=com
+    username: cn=admin,dc=example,dc=com
+    password: 123456
+    anonymousReadOnly: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
+
